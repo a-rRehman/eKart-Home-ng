@@ -12,10 +12,12 @@ export class SearchComponent {
   onSearchTextChange() {
     this.SearchTextChange.emit(this.searchText);
   }
-  updateSearchText(event: any) {
-    this.searchText = event.target.value;
-  }
-  onClick() {
-    alert(this.searchText);
+  // updateSearchText(event: any) {
+  //   this.searchText = event.target.value;
+  // }
+
+  updateSearchText(inputEl: HTMLInputElement) {
+    this.searchText = inputEl.value;
+    this.SearchTextChange.emit(this.searchText);
   }
 }
